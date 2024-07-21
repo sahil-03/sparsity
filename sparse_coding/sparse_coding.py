@@ -53,9 +53,9 @@ class SparseCoder(nn.Module):
             if DEBUG: 
                 if i % 100 == 0:
                     print(f"Iteration {i}:")
-                    print(f"  Max h value: {h.abs().max().item()}")
-                    print(f"  Mean h value: {h.abs().mean().item()}")
-                    print(f"  Residual norm: {residual.norm().item()}")
+                    print(f"\tMax h value: {h.abs().max().item()}")
+                    print(f"\tMean h value: {h.abs().mean().item()}")
+                    print(f"\tResidual norm: {residual.norm().item()}")
             
             if torch.norm(h - h_old, dim=1).max() < self.tol:
                 if DEBUG:
